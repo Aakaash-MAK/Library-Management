@@ -1,0 +1,88 @@
+// Color Variables
+$primary-color: #966C3B; // Main color for buttons and headings
+$secondary-color: lighten($primary-color, 30%); // Lightened version of primary color for background
+$border-color: #ccc; // Color for borders and secondary text
+$card-background: rgba(255, 255, 255, 0.9); // Background color for cards
+$button-hover-color: darken($primary-color, 10%); // Color for button hover state
+
+// Font Variables
+$font-size-large: 1.2em; // Font size for card titles (h3)
+$font-size-small: 0.9em; // Font size for card descriptions (p)
+
+// Spacing Variables
+$padding-base: 15px; // Base padding for card content
+$margin-base: 10px; // Base margin for elements
+$border-radius: 4px; // Default border radius for elements
+
+// Shadow Variables
+$box-shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1); // Light shadow for cards
+
+.book-list {
+    text-align: center;
+    margin: $margin-base; // Use base margin variable
+    background-color: #f9f9f9; // Set background color for the component
+    padding: 20px; // Add some padding around the component
+    border-radius: 8px; // Optional: rounded corners for the background
+}
+h2{
+  text-align: center;
+}
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-evenly;
+}
+  
+.card {
+    width: 23%;
+    background: linear-gradient(to bottom right, $secondary-color, $card-background); // Gradient background
+    border-radius: $border-radius; // Use border radius variable
+    box-shadow: $box-shadow-light; // Use light box shadow variable
+    padding: $padding-base; // Use base padding variable
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+.card-image img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: $border-radius; // Use border radius variable for images
+}
+  
+.card-content {
+    margin-top: 15px; // Adjust margin if needed
+    text-align: center;
+}
+  
+.card-content h3 {
+    margin: 10px 0;
+    font-size: $font-size-large; // Use large font size variable
+    color: $primary-color; // Set title color to primary color
+}
+  
+.card-content p {
+    margin: 5px 0;
+    font-size: $font-size-small; // Use small font size variable
+    color: black; // Set paragraph color to border color for contrast
+}
+  
+.card-actions {
+    margin-top: 15px;
+}
+  
+.card-actions button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: $border-radius; // Use border radius variable
+    background-color: $primary-color; // Use primary color for button background
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s; // Smooth transition for hover effect
+}
+  
+.card-actions button:hover {
+    background-color: $button-hover-color; // Use button hover color variable
+}

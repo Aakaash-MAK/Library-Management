@@ -1,0 +1,85 @@
+$primary-color: #966C3B; // Main color for the navbar and buttons
+$secondary-color: #f0e68c; // Optional secondary color for hover effects
+$background-color: rgba(249, 249, 249, 0.8); // Light background color with some transparency for the navbar
+$link-color: white; // Default color for navigation links
+$hover-color: darken($primary-color, 10%); // Color for link hover state
+$active-link-color: lighten($primary-color, 10%); // Color for the active link
+
+$font-family-base: "Afacad Flux", sans-serif; // Base font family for the navigation links
+$font-size-base: 16px; // Base font size for links
+
+$padding-base: 10px 15px; // Padding for links in the navbar
+$margin-base: 0; // Base margin for navigation items
+$border-radius: 4px; // Border radius for rounded link backgrounds
+
+// Shadow Variables
+$box-shadow-navbar: 0 2px 5px rgba(0, 0, 0, 0.1); // Light shadow for the navbar
+
+.logo {
+  height: 60px; /* Adjust the height as needed */
+  width: 100px; /* Maintain aspect ratio */
+}
+
+.logo-container {
+  height: 60px; /* Adjust the height as needed */
+  width: auto; /* Maintain aspect ratio */
+}
+
+nav {
+  display: flex; /* Flexbox to arrange items in a row */
+  align-items: center; /* Center items vertically */
+  background-color: $primary-color; // Use primary color for the navbar
+  padding: 10px 20px;
+
+  .logo-container {
+    margin-right: 20px; // Space between logo and nav list
+  }
+
+  .nav-list {
+    list-style: none;
+    display: flex; /* Use flexbox for the nav list */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    flex-grow: 1; /* Allow nav-list to take remaining space */
+    justify-content: center; /* Center the nav items */
+
+    li {
+      margin-left: 30px; // Space between nav items
+
+      a {
+        color: white; // White text color for links
+        text-decoration: none; // Remove underline
+        padding: $padding-base; // Use base padding
+        border-radius: $border-radius; // Use base border radius
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: darken($primary-color, 10%); // Darken on hover
+        }
+
+        &.active {
+          background-color: lighten($primary-color, 10%); // Highlight active link
+        }
+      }
+    }
+  }
+
+  .logout-container {
+    margin-left: auto; // Push logout button to the right end
+    a {
+      color: white; // White text color for links
+      text-decoration: none; // Remove underline
+      padding: $padding-base; // Use base padding
+      border-radius: $border-radius; // Use base border radius
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: darken($primary-color, 10%); // Darken on hover
+      }
+
+      &.active {
+        background-color: lighten($primary-color, 10%); // Highlight active link
+      }
+    }
+  }
+}

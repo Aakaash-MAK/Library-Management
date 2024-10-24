@@ -1,0 +1,30 @@
+<div class="book-list">
+    <table>
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Book ID</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Is Available</th>
+                <th>Checked Out By</th>
+                <th>Checked Out At Date </th>
+                <th>Checked Out At Time </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let book of books">
+                <td>
+                    <img *ngIf="book.imageUrl" [src]="'assets/' + book.imageUrl" alt="{{ book.title }}" width="100" height="150"/>
+                </td>
+                <td>{{ book.bookId }}</td>
+                <td>{{ book.title }}</td>
+                <td>{{ book.author }}</td>
+                <td>{{ book.isAvailable ? 'Yes' : 'No' }}</td>
+                <td>{{ book.checkedOutBy || '-' }}</td>
+                <td>{{ book.checkedouttime ? (book.checkedouttime | date: 'yyyy-MM-dd') : '-' }}</td>
+                <td>{{ book.checkedouttime ? (book.checkedouttime | date: 'HH:mm:ss') : '-' }}</td>                
+            </tr>
+        </tbody>
+    </table>
+</div>

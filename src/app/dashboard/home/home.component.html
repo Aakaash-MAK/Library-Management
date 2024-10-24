@@ -1,0 +1,24 @@
+
+  <h2>Book List</h2>
+  <div class="card-container">
+    <div class="card" *ngFor="let book of books">
+     <div class="card-image">
+        <img [src]="'assets/' + book.imageUrl" alt="Background Image" />
+      </div> 
+      <div class="card-content">
+        <h3>{{ book.title }}</h3>
+        <p>Author: {{ book.author }}</p>
+        <p *ngIf="book.isAvailable">Available</p>
+        <p *ngIf="!book.isAvailable">Checked out by: {{ book.checkedOutBy ? book.checkedOutBy : 'N/A' }}</p>
+      </div>
+      <div class="card-actions">
+        <button *ngIf="book.isAvailable" (click)="checkout(book.bookId)">
+          Check Out
+        </button>
+        <button *ngIf="book.checkedOutBy === username" (click)="checkin(book.bookId)"
+          style="background-color: red; color: white;">
+          Check In
+        </button>
+      </div>
+    </div>
+  </div>
